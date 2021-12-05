@@ -6,10 +6,10 @@ def bisection(left,right,tolerant_value):
 
     while True:
         mid = (left+right)/2;
-        if(func(mid)*func(right)<0):
-            left=mid;
-        else:
+        if(func(mid)*func(right)):
             right=mid;
+        else:
+            left=mid;
         if(abs(func(mid))<tolerant_value):
             break;
     print('\nRequired Root is : %0.10f' % mid)
